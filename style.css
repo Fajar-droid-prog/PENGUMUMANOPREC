@@ -82,7 +82,7 @@ section{
   position:absolute;
   inset:0;
   background:url("head.jpg") center/cover no-repeat;
-  z-index:-1;
+  z-index:-2;
   animation: heroBgIn 1500ms ease-out forwards;
 }
 
@@ -101,7 +101,7 @@ height: clamp(220px, 28svh, 440px);           /* lebih panjang */
     rgba(15,15,15,.7) 72%,
     #0f0f0f 92%                                     /* akhir pekat */
   );
-  z-index:0;
+  z-index:-2;
 }
 
 @keyframes heroBgIn {
@@ -195,4 +195,5 @@ p{
   max-width:70ch;
   margin:0 auto 16px;
 }
+
 
