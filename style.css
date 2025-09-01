@@ -36,7 +36,11 @@
 }
 
 html{ scroll-behavior: smooth; }
-html,body{ height:100% }
+html, body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body{
   font-family:"The Seasons", Georgia, serif;
@@ -194,3 +198,4 @@ p{
   max-width:70ch;
   margin:0 auto 16px;
 }
+
