@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pengumuman Oprec</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+    <style>
+        .cards {
+            display: grid;
+            gap: 3rem;
+            padding: 4rem 0;
+            min-height: 80vh;
+        }
+        
+        .division {
+            background: rgba(0, 0, 0, 0.03);
+            border-radius: 20px;
+            padding: 2.5rem 4rem; /* Padding kiri-kanan diperbesar */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 213, 183, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            width: 90%; /* Lebar card 90% dari container */
+            max-width: none;
+            margin: 0 auto; /* Center card */
+        }
+        
+        .division::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                rgb(61, 85, 27), 
+                rgba(147, 78, 45, 0.6), 
+                rgba(47, 23, 5, 0.8));
+        }
+        
+        .division-title {
+            font-family: 'The Seasons', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #e8d5b7;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .division-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e8d5b7, transparent);
+        }
+        
+        .names-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Fixed 2 kolom */
+            gap: 2rem;
+            width: 100%;
+        }
+        
+        .name-item {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 2rem 1.5rem; /* Padding lebih besar */
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            min-height: 120px; /* Tinggi minimum */
+        }
+        
+        .name-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(232, 213, 183, 0.1), 
+                transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .name-item:hover::before {
+            left: 100%;
+        }
+        
+        .name-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            border-color: rgba(232, 213, 183, 0.3);
+        }
+        
+        .participant-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-style: bold;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .participant-detail {
+            font-family: 'Poppins', sans-serif;
+            font-style: bold;
+            font-size: 0.9rem;
+            color: #b8b8b8;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .ornament {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            opacity: 0.1;
+            background: radial-gradient(circle, #e8d5b7 2px, transparent 2px);
+            background-size: 8px 8px;
+        }
+        
+        .demo-container {
+            max-width: 1600px; /* Container diperbesar lagi */
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2rem; /* Padding kiri-kanan container */
+        }
+        
+        .demo-title {
+            font-family: "";
+            font-size: 2.5rem;
+            font-style: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #e8d5b7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .names-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .division {
+                padding: 2rem;
+            }
+            
+            .division-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="content-box">
+      <h1 class="hero-title">Pengumuman Hasil<br>Open Recruitment</h1>
+      <img src="soraiwaisai.png" class="sorai-waisai" alt="Sorai Waisai">
+    </div>
+  </section>
+
+<section id="hasil" class="content">
+  <div class="content-inner">
+
+    <h1 class="title">SELAMAT BERSORAI DI WAISAI</h1>
+
+    <div class="demo-container">
+        <section class="cards">
+            <div class="division">
+                <h2 class="division-title">CLUSTER SAINTEK</h2>
+                <div class="names-grid">
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Andi Pratama</div>
+                        <div class="participant-detail">Universitas Gadjah Mada</div>
+                    </div>
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Sari Dewi Lestari</div>
+                        <div class="participant-detail">Institut Teknologi Bandung</div>
+                    </div>
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Muhammad Rizki</div>
+                        <div class="participant-detail">Universitas Indonesia</div>
+                    </div>
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Putri Maharani</div>
+                        <div class="participant-detail">Universitas Brawijaya</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divisi Creative -->
+            <div class="division">
+                <h2 class="division-title">KLUSTER AGRO</h2>
+                <div class="names-grid">
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Bayu Satria Negara</div>
+                        <div class="participant-detail">Institut Seni Budaya Indonesia</div>
+                    </div>
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Laras Purnama</div>
+                        <div class="participant-detail">Universitas Padjadjaran</div>
+                    </div>
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Dimas Aditya Rahman</div>
+                        <div class="participant-detail">Universitas Negeri Yogyakarta</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divisi Event -->
+            <div class="division">
+                <h2 class="division-title">KLUSTER SOSHUM</h2>
+                <div class="names-grid">
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Kevin Pranata</div>
+                        <div class="participant-detail">Universitas Diponegoro</div>
+                    </div>
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Anisa Fitri Handayani</div>
+                        <div class="participant-detail">Universitas Airlangga</div>
+                    </div>
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Reza Firmansyah</div>
+                        <div class="participant-detail">Institut Teknologi Sepuluh Nopember</div>
+                    </div>
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Maya Sari Dewi</div>
+                        <div class="participant-detail">Universitas Sebelas Maret</div>
+                    </div>
+                    <div class="name-item">
+                        <div class="ornament"></div>
+                        <div class="participant-name">Fajar Nugroho</div>
+                        <div class="participant-detail">Universitas Hasanuddin</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

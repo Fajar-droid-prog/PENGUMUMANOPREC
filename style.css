@@ -1,0 +1,196 @@
+/* =========================
+   FONT: The Seasons (lokal)
+   ========================= */
+@font-face{
+  font-family: "The Seasons";
+  src: url("fonts/Fontspring-DEMO-theseasons-reg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "The Seasons";
+  src: url("fonts/Fontspring-DEMO-theseasons-bd.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   BASE
+   ========================= */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --text:#ffffff;
+  --muted:#f1f1f1;
+  --bg:#0f0f0f;
+  --btn:#ffffff;
+  --btn-text:#111;
+  --shadow:0 12px 36px rgba(0,0,0,.35);
+  --gradient-1: linear-gradient(135deg, #000000 0%, #000000 100%);
+  --gradient-2: linear-gradient(135deg, #0f0f0f 0%, #000000 100%);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --table-bg: rgba(255,255,255,0.05);
+  --table-border: rgba(255,255,255,0.1);
+}
+
+html{ scroll-behavior: smooth; }
+html,body{ height:100% }
+
+body{
+  font-family:"The Seasons", Georgia, serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.5;
+}
+
+a{ color:inherit }
+
+/* =========================
+   SECTION LAYOUT
+   ========================= */
+section{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  overflow:hidden;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;      /* mulai dari atas */
+  justify-content: center;
+  text-align: center;
+  isolation: isolate;           /* penting untuk layer */
+}
+
+/* background utama */
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("head.jpg") center/cover no-repeat;
+  z-index:-2;
+  animation: heroBgIn 1500ms ease-out forwards;
+}
+
+/* gradasi ke hitam di bagian bawah */
+.hero::after {
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+height: clamp(220px, 28svh, 440px);           /* lebih panjang */
+  background: linear-gradient(
+    to bottom,
+    rgba(15,15,15,0) 0%,
+    rgba(15,15,15,.35) 45%,
+    rgba(15,15,15,.7) 72%,
+    #0f0f0f 92%                                     /* akhir pekat */
+  );
+  z-index:-1;
+}
+
+@keyframes heroBgIn {
+  0%   { background-size:120%; filter:blur(6px); opacity:0; }
+  100% { background-size:100%; filter:blur(0);  opacity:1; }
+}
+
+/* =========================
+   CONTENT BOX
+   ========================= */
+.content-box {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+
+  /* posisikan blok ini sekitar 60% tinggi layar → pas di bawah muka */
+  margin-top: clamp(300px, 70vh, 520px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px; /* jarak antar elemen */
+  text-align: center;
+}
+
+/* =========================
+   HERO TITLE
+   ========================= */
+.hero-title {
+  margin: 0;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1200ms ease-out forwards;
+  animation-delay: 800ms;
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 0.6; }
+}
+
+/* =========================
+   SORAI WAISAI
+   ========================= */
+.sorai-waisai {
+  display: block;
+  width: clamp(120px, 20vw, 260px); /* responsif, max lebih kecil */
+  height: auto;
+  opacity: 0;
+  animation: fadeInDown 1200ms ease-out forwards;
+  margin-bottom: 0; 
+  animation-delay: 1100ms;
+}
+
+@keyframes fadeInDown {
+  0%   { opacity: 0; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(-30px); }
+}
+
+.overlay{
+  position:absolute; 
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55));
+  z-index:-1;
+}
+
+/* =========================
+   TYPOGRAPHY
+   ========================= */
+h1,h2{
+  font-family:"The Seasons", Georgia, serif;
+  line-height:1.1;
+  text-shadow:0 3px 12px rgba(0,0,0,.55);
+}
+h1{
+  font-size:clamp(38px, 7vw, 80px);
+  font-weight:700;
+  margin-bottom:18px;
+  opacity: 50%;
+}
+h2{
+  font-size:clamp(28px, 4.6vw, 44px);
+  font-weight:700;
+  margin-bottom:24px;
+}
+
+p{
+  font-size:clamp(16px, 2vw, 20px);
+  color:var(--muted);
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
+  max-width:70ch;
+  margin:0 auto 16px;
+}
