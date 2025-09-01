@@ -176,6 +176,26 @@
                 font-size: 1.5rem;
             }
         }
+            .site-footer{
+                position: sticky;           /* tetap di bawah saat halaman pendek */
+                bottom: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding: 10px 16px;
+                background: rgba(0,0,0,.35);    /* bar gelap tipis */
+                backdrop-filter: blur(2px);
+                border-top: 1px solid rgba(255,255,255,.25);
+            }
+            .site-footer .copy{
+                margin: 0;
+                color: rgba(255,255,255,.95);
+                text-transform: uppercase;
+                letter-spacing: .25em;          /* jarak huruf seperti contoh */
+                font-weight: 500;
+                font-size: clamp(10px, 1.1vw + .35rem, 14px);
+            }
+
     </style>
 </head>
 <body>
@@ -277,5 +297,8 @@
             </div>
         </section>
     </div>
+    <footer class="site-footer" aria-label="copyright">
+        <p class="copy">© 2025 SORAI WAISAI</p>
+    </footer>
 </body>
 </html>
