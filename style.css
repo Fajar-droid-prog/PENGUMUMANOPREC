@@ -136,7 +136,6 @@ height: clamp(220px, 28svh, 440px);           /* lebih panjang */
   margin: 0;
   line-height: 1.2;
   opacity: 0;
-  transform: translateY(30px);
   animation: fadeIn 1200ms ease-out forwards;
   animation-delay: 800ms;
 }
@@ -198,4 +197,5 @@ p{
   max-width:70ch;
   margin:0 auto 16px;
 }
+
 
