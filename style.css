@@ -36,12 +36,7 @@
 }
 
 html{ scroll-behavior: smooth; }
-
-html, body {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
+html,body{ height:100% }
 
 body{
   font-family:"The Seasons", Georgia, serif;
@@ -71,42 +66,50 @@ section{
    ========================= */
 .hero {
   position: relative;
-  height: 100vh;   /* penuh 1 layar */
-  width: 100%;     /* penuh lebar */
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
 }
 
-/* background utama */
+/* Gambar background */
 .hero::before {
   content:"";
   position:absolute;
   inset:0;
   background:url("head.jpg") center/cover no-repeat;
-  z-index:-2;
+  z-index:0;
   animation: heroBgIn 1500ms ease-out forwards;
 }
 
-/* gradasi ke hitam di bagian bawah */
+/* Overlay gradient hitam */
 .hero::after {
   content:"";
   position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-height: clamp(220px, 28svh, 440px);           /* lebih panjang */
+  inset:0;
   background: linear-gradient(
-    to bottom,
-    rgba(15,15,15,0) 0%,
-    rgba(15,15,15,.35) 45%,
-    rgba(15,15,15,.7) 72%,
-    #0f0f0f 92%                                     /* akhir pekat */
+    to bottom, 
+    rgba(0,0,0,0) 70%,   /* transparan di atas */
+    rgba(0,0,0,1) 100%  /* hitam penuh di bawah */
   );
-  z-index:-2;
+  z-index:1; /* di atas gambar, di bawah teks */
+}
+
+/* Konten di atas semuanya */
+.hero > * {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+/* juga pastikan tidak ada gradient di body */
+body{
+  background-color:#000;     /* polos saja */
+  background-image:none;     /* hilangkan linear-gradient dll */
 }
 
 @keyframes heroBgIn {
-  0%   { background-size:120%; filter:blur(6px); opacity:0; }
-  100% { background-size:100%; filter:blur(0);  opacity:1; }
+  from { transform: scale(1.1); opacity: 0}
+  to   { transform: scale(1); opacity: 1}
 }
 
 /* =========================
@@ -140,7 +143,7 @@ height: clamp(220px, 28svh, 440px);           /* lebih panjang */
 
 @keyframes fadeIn {
   0%   { opacity: 0; }
-  100% { opacity: 0.6; }
+  100% { opacity: 0.8; }
 }
 
 /* =========================
@@ -195,5 +198,4 @@ p{
   max-width:70ch;
   margin:0 auto 16px;
 }
-
 
