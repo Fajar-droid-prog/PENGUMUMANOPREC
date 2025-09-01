@@ -101,7 +101,7 @@ height: clamp(220px, 28svh, 440px);           /* lebih panjang */
     rgba(15,15,15,.7) 72%,
     #0f0f0f 92%                                     /* akhir pekat */
   );
-  z-index:-1;
+  z-index:0;
 }
 
 @keyframes heroBgIn {
@@ -195,3 +195,4 @@ p{
   max-width:70ch;
   margin:0 auto 16px;
 }
+
