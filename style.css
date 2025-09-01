@@ -157,6 +157,7 @@ body{
   animation: fadeInDown 1200ms ease-out forwards;
   margin-bottom: 0; 
   animation-delay: 1100ms;
+  z-index: 3; 
 }
 
 @keyframes fadeInDown {
