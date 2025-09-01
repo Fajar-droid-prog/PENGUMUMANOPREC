@@ -36,6 +36,7 @@
 }
 
 html{ scroll-behavior: smooth; }
+
 html, body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -70,12 +71,9 @@ section{
    ========================= */
 .hero {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start;      /* mulai dari atas */
-  justify-content: center;
-  text-align: center;
-  isolation: isolate;           /* penting untuk layer */
+  height: 100vh;   /* penuh 1 layar */
+  width: 100%;     /* penuh lebar */
+  overflow: hidden;
 }
 
 /* background utama */
@@ -84,7 +82,7 @@ section{
   position:absolute;
   inset:0;
   background:url("head.jpg") center/cover no-repeat;
-  z-index:-2;
+  z-index:-1;
   animation: heroBgIn 1500ms ease-out forwards;
 }
 
@@ -197,5 +195,3 @@ p{
   max-width:70ch;
   margin:0 auto 16px;
 }
-
-
